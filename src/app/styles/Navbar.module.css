@@ -1,0 +1,261 @@
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50; /* Darker blue-gray */
+  padding: 15px 30px;
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.logo a {
+  color: #f39c12; /* Warm amber color */
+  font-size: 28px; /* Slightly larger font */
+  text-decoration: none;
+  font-weight: 700; /* Bold logo text */
+  letter-spacing: 2px; /* Adds a bit of space between letters */
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Increased gap between links */
+}
+
+.navLinks li {
+  display: inline;
+  position: relative; /* Ensure the dropdown is positioned relative to this item */
+}
+
+.navLinks a {
+  color: #ecf0f1; /* Light gray text */
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.navLinks a:hover {
+  background-color: #f39c12; /* Amber hover effect */
+  color: #2c3e50; /* Dark text for better contrast on hover */
+}
+
+.navLinks a:focus {
+  outline: 2px solid #f39c12; /* Amber outline on focus */
+  outline-offset: 2px;
+}
+
+/* Hamburger icon for mobile view */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.bar {
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  border-radius: 3px;
+  transition: transform 0.3s ease; /* Smooth transform on hamburger toggle */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+    width: 100%;
+    background-color: #34495e; /* A softer dark gray */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+    border-top: 2px solid #f39c12; /* Amber border at the top */
+    z-index: 9999; /* Ensure dropdown stays above other elements */
+  }
+
+  .navLinks.right {
+    right: 0;
+    left: auto;
+  }
+
+  .navLinks.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks li {
+    width: 100%;
+    text-align: left;
+  }
+
+  .navLinks a {
+    color: #ecf0f1; /* Light gray text */
+    font-size: 22px; /* Larger text for mobile */
+    padding: 12px 20px;
+  }
+
+  .navLinks a:hover {
+    background-color: #f39c12; /* Amber hover effect */
+    color: #2c3e50;
+  }
+
+  /* Animating hamburger bar */
+  .hamburger.open .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  
+  .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+
+  /* Mobile dropdown menu */
+  .dropdownMenu {
+    position: static; /* Dropdown will no longer be absolute */
+    width: 100%; /* Make the dropdown fill the screen width */
+    background-color: #34495e; /* Match mobile background */
+    display: none; /* Hide dropdown by default */
+    flex-direction: column;
+    z-index: 9999; /* Ensure it stays above other elements */
+  }
+
+  .navLinks li:hover .dropdownMenu {
+    display: flex; /* Show the dropdown on hover */
+  }
+
+  .dropdownSection {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .dropdownSection h4 {
+    font-size: 14px; /* Smaller font size for mobile */
+    padding-left: 15px;
+  }
+
+  .dropdownMenu li a {
+    padding: 12px 20px;
+    text-align: left;
+  }
+
+  /* Fix the Other Languages Section */
+  .dropdownSection .languageList {
+    display: block;
+    width: 100%;
+  }
+
+  .dropdownSection .languageList li {
+    display: block;
+    padding: 8px 15px;
+  }
+}
+
+/* Dropdown Menu with Vertical 2 Rows (Desktop View) */
+.navLinks li .dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f39c12; /* Warm amber for the dropdown */
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for dropdown */
+  min-width: 250px; /* Ensure the dropdown has some width */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  gap: 10px; /* Space between items */
+  z-index: 9999; /* Ensure the dropdown stays above other elements */
+  overflow: auto; /* Allow the dropdown to expand with content */
+}
+
+.navLinks li .dropdownMenu {
+  max-width: calc(100vw - 30px); /* Prevent dropdown from overflowing on the right */
+  left: auto; /* Reset left positioning */
+  right: 0; /* Align it to the right side to stay within the viewport */
+}
+
+.navLinks li:hover .dropdownMenu {
+  display: grid;
+}
+ 
+.dropdownMenu li {
+  padding: 10px 15px;
+  text-align: center; /* Center text inside each dropdown item */
+}
+
+.dropdownMenu li a {
+  color: #34495e; /* Dark gray text */
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.dropdownMenu li a:hover {
+  background-color: #ecf0f1; /* Light gray hover */
+  color: #2c3e50;
+}
+
+/* Section Header */
+.dropdownSection {
+  margin-bottom: 15px;
+}
+
+.dropdownSection h4 {
+  font-size: 16px;
+  color: #2c3e50; /* Dark color for the section header */
+  margin-bottom: 10px;
+  padding-left: 15px; /* Indentation for the section title */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Aligning Sub-Lists Inside Sections */
+.dropdownSection ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.dropdownSection li {
+  padding: 5px 0;
+}
+
+/* Dropdown Container and Arrow */
+.navLinks .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.navLinks .dropdown > a {
+  padding-right: 20px; /* Add some space for a dropdown indicator */
+}
+
+.navLinks .dropdown::after {
+  content: "▼"; /* Dropdown arrow */
+  font-size: 14px;
+  color: #ecf0f1;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.navLinks .dropdown:hover::after {
+  transform: translateY(-50%) rotate(180deg); /* Arrow rotation on hover */
+}

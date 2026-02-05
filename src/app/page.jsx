@@ -1,65 +1,127 @@
-import Image from "next/image";
+// src/pages/Page.jsx
+import React from 'react'
+import Card from './components/Card'
+import './globals.css';
 
-export default function Home() {
+const Page = () => {
+  // Updated content for each card
+  const cardData = [
+    {
+      title: 'Beautiful Landscape',
+      description: 'A scenic view of the mountains with a beautiful sunset.',
+      imageUrl: './Images/lining.png',
+
+    },
+    {
+      title: 'City Life',
+      description: 'A bustling city with vibrant nightlife and modern architecture.',
+      imageUrl: 'https://source.unsplash.com/300x200/?city',
+    },
+    {
+      title: 'Ocean Breeze',
+      description: 'Relaxing by the beach with the sound of the waves crashing.',
+      imageUrl: 'https://source.unsplash.com/300x200/?ocean',
+    },
+    {
+      title: 'Forest Adventure',
+      description: 'Exploring dense woods with towering trees and peaceful silence.',
+      imageUrl: 'https://source.unsplash.com/300x200/?forest',
+    },
+    {
+      title: 'Desert Oasis',
+      description: 'A peaceful oasis in the middle of a vast desert.',
+      imageUrl: 'https://source.unsplash.com/300x200/?desert',
+    },
+    {
+      title: 'Mountain Peak',
+      description: 'Climbing the highest peak to watch the sunrise over the valley.',
+      imageUrl: 'https://source.unsplash.com/300x200/?mountain',
+    },
+    {
+      title: 'Autumn Forest',
+      description: 'A vibrant forest with colorful leaves in the fall season.',
+      imageUrl: 'https://source.unsplash.com/300x200/?autumn',
+    },
+    {
+      title: 'Rainy Day',
+      description: 'A peaceful view of the world on a rainy day with droplets on the window.',
+      imageUrl: 'https://source.unsplash.com/300x200/?rain',
+    },
+    {
+      title: 'Snowy Mountains',
+      description: 'A serene winter landscape with snow-covered peaks.',
+      imageUrl: 'https://source.unsplash.com/300x200/?snow',
+    },
+    {
+      title: 'Tropical Paradise',
+      description: 'A secluded beach with crystal-clear water and palm trees swaying.',
+      imageUrl: 'https://source.unsplash.com/300x200/?tropical',
+    },
+    {
+      title: 'Night Sky',
+      description: 'Stargazing under the clear night sky with a view of the Milky Way.',
+      imageUrl: 'https://source.unsplash.com/300x200/?night-sky',
+    },
+    {
+      title: 'Lavender Fields',
+      description: 'Walking through vast lavender fields during sunset.',
+      imageUrl: 'https://source.unsplash.com/300x200/?lavender',
+    },
+    {
+      title: 'Rolling Hills',
+      description: 'Driving through rolling hills with lush green fields and blue skies.',
+      imageUrl: 'https://source.unsplash.com/300x200/?hills',
+    },
+  ];
+
+  // Define the headers you want to insert after every group of cards
+  const headers = [
+    "This is the Web Development Course",
+    "This is the Software Development Course",
+    "This is the Mobile Development Course",
+    "This is the Data Science Course"
+  ];
+
+  
+  // Function to chunk the cardData array into groups of 4 cards
+  const chunkCards = (arr, size) => {
+    const chunks = [];
+    for (let i = 0; i < arr.length; i += size) {
+      chunks.push(arr.slice(i, i + size));
+    }
+    return chunks;
+  };
+
+  const cardChunks = chunkCards(cardData, 3);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div>
+      <h1>Welcome to the Home Page</h1>
+      <div className="container mx-auto py-8">
+        {/* Loop through each chunk of cards */}
+        {cardChunks.map((chunk, index) => (
+          <div key={index} className="my-8">
+            {/* Insert the header with unique classes for animation */}
+            <h2 className={`header-text header-text${index + 1}`}>
+              {headers[index]}
+            </h2>
+
+            {/* Cards will be here */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              {chunk.map((data, i) => (
+                <Card
+                  key={i}
+                  title={data.title}
+                  description={data.description}
+                  imageUrl={data.imageUrl}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
+
+export default Page;

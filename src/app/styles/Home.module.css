@@ -1,0 +1,64 @@
+/* styles/Home.module.css */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.heroSection {
+  text-align: center;
+  background-color: #f1f1f1;
+  padding: 50px 0;
+}
+
+.ctaButton {
+  background-color: #3498db;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.languagesSection {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.languagesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.languageCard {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.languageCard img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.languageCard h3 {
+  font-size: 22px;
+}
+
+.languageCard p {
+  font-size: 16px;
+}
+
+.languageCard button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
