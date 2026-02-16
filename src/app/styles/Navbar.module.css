@@ -259,3 +259,17 @@
 .navLinks .dropdown:hover::after {
   transform: translateY(-50%) rotate(180deg); /* Arrow rotation on hover */
 }
+
+/* Example styling for the Download Resume link */
+.downloadLink {
+  color: #fff; /* Or any color you want */
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #0070f3; /* Or any background color you prefer */
+  transition: background-color 0.3s ease;
+}
+
+.downloadLink:hover {
+  background-color: #005bb5; /* Darker shade on hover */
+}

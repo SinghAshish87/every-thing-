@@ -11,7 +11,7 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown visibility
   };
@@ -34,8 +34,11 @@ const Navbar = () => {
         <li>
           <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
         </li>
+
+        {/* About Page Link */}
         <li>
-          <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
+          {/* Adjusting the About page link to the correct path */}
+          <Link href="/About" onClick={() => setIsMenuOpen(false)}>About</Link>
         </li>
 
         {/* Languages Dropdown */}
@@ -53,7 +56,7 @@ const Navbar = () => {
                   <li><Link href="/languages/german">German</Link></li>
                 </ul>
               </li>
- <br/>
+              <br/>
               {/* Asian Languages Section */}
               <li className={styles.dropdownSection}>
                 <h4>Asian Languages</h4>
@@ -63,7 +66,7 @@ const Navbar = () => {
                   <li><Link href="/languages/korean">Korean</Link></li>
                 </ul>
               </li>
-                <br/>
+              <br/>
               {/* Other Languages Section */}
               <li className={styles.dropdownSection}>
                 <h4>Other Languages</h4>
@@ -77,8 +80,22 @@ const Navbar = () => {
         </li> 
 
         <li>
-          <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+          <Link href="/Contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
         </li>
+
+           {/* Download Resume Link */}
+        <li>
+          <Link 
+           href="/docs/resume1.pdf" // Update this path to your resume file location
+            passHref
+            download="My_Resume.pdf"    // This will trigger the download
+            className={styles.downloadLink} 
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Download Resume
+          </Link>
+        </li>
+
       </ul>
     </nav>
   );

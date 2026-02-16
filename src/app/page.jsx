@@ -1,120 +1,125 @@
-// src/pages/Page.jsx
-import React from 'react'
-import Card from './components/Card'
+import React from 'react';
+import Card from './components/Card'; // Importing the Card component
 import './globals.css';
 
 const Page = () => {
-  // Updated content for each card
-  const cardData = [
+  // Data for different sections
+  const sections = [
     {
-      title: 'Beautiful Landscape',
-      description: 'A scenic view of the mountains with a beautiful sunset.',
-      imageUrl: './Images/lining.png',
-
+      title: 'Web Development',
+      headerColor: 'text-indigo-500', // Lighter color for header
+      cards: [
+        {
+          title: 'React.js',
+          imageUrl: '/images/react.png',
+          link: '/course/react', // Link to the React course page
+          header: 'Learn React.js',
+          buttonType1: 5, // Soft Green
+          buttonType2: 6, // Soft Purple
+          iconType: 'react', // Icon for React
+        },
+        {
+          title: 'Vue.js',
+          imageUrl: '/images/vue.png', // Example image URL for Vue
+          link: '/course/vue', // Link to the Vue course page
+          header: 'Explore Vue.js',
+          buttonType1: 1, // Soft Teal
+          buttonType2: 2, // Soft Blue
+          iconType: 'node', // Icon for Node.js
+        },
+        {
+          title: 'Angular',
+          imageUrl: '/images/angular.jpg',
+          link: '/course/angular', // Link to the Angular course page
+          header: 'Master Angular',
+          buttonType1: 3, // Soft Coral
+          buttonType2: 4, // Soft Yellow
+          iconType: 'lightbulb', // Icon for Lightbulb (generic)
+        },
+      ],
     },
     {
-      title: 'City Life',
-      description: 'A bustling city with vibrant nightlife and modern architecture.',
-      imageUrl: 'https://source.unsplash.com/300x200/?city',
+      title: 'Backend Languages',
+      headerColor: 'text-gray-600', // Soft Gray for header
+      cards: [
+        {
+          title: 'Node.js',
+          imageUrl: '/images/nodejs.png',
+          link: '/course/node', // Link to the Node.js course page
+          header: 'Node.js Basics',
+          buttonType1: 2, // Soft Blue
+          buttonType2: 3, // Soft Coral
+          iconType: 'node', // Icon for Node.js
+        },
+        {
+          title: 'Python',
+          imageUrl: '/images/python.png',
+          link: '/courses/Python', // Link to the Python course page
+          header: 'Python for Backend',
+          buttonType1: 4, // Soft Yellow
+          buttonType2: 5, // Soft Green
+          iconType: 'data', // Icon for Data Usage
+        },
+        {
+          title: 'Go',
+          imageUrl: '/images/go.jpg',
+          link: '/course/go', // Link to the Go course page
+          header: 'Go for Web Servers',
+          buttonType1: 6, // Soft Purple
+          buttonType2: 1, // Soft Teal
+          iconType: 'react', // Icon for React (example)
+        },
+      ],
     },
     {
-      title: 'Ocean Breeze',
-      description: 'Relaxing by the beach with the sound of the waves crashing.',
-      imageUrl: 'https://source.unsplash.com/300x200/?ocean',
+      title: 'Databases',
+      headerColor: 'text-green-500', // Soft Green for header
+      cards: [
+        {
+          title: 'MongoDB',
+          imageUrl: '/images/mongo.png',
+          link: '/course/mongo', // Link to the MongoDB course page
+          header: 'Working with MongoDB',
+          buttonType1: 1, // Soft Teal
+          buttonType2: 2, // Soft Blue
+          iconType: 'lightbulb', // Icon for Lightbulb
+        },
+        {
+          title: 'PostgreSQL',
+          imageUrl: '/images/postgres.jpg',
+          link: '/course/postgres', // Link to the PostgreSQL course page
+          header: 'PostgreSQL Basics',
+          buttonType1: 3, // Soft Coral
+          buttonType2: 4, // Soft Yellow
+          iconType: 'data', // Icon for Data Usage
+        },
+        {
+          title: 'MySQL',
+          imageUrl: '/images/mysql.png',
+          link: '/course/mysql', // Link to the MySQL course page
+          header: 'MySQL Introduction',
+          buttonType1: 5, // Soft Green
+          buttonType2: 6, // Soft Purple
+          iconType: 'node', // Icon for Node.js
+        },
+      ],
     },
-    {
-      title: 'Forest Adventure',
-      description: 'Exploring dense woods with towering trees and peaceful silence.',
-      imageUrl: 'https://source.unsplash.com/300x200/?forest',
-    },
-    {
-      title: 'Desert Oasis',
-      description: 'A peaceful oasis in the middle of a vast desert.',
-      imageUrl: 'https://source.unsplash.com/300x200/?desert',
-    },
-    {
-      title: 'Mountain Peak',
-      description: 'Climbing the highest peak to watch the sunrise over the valley.',
-      imageUrl: 'https://source.unsplash.com/300x200/?mountain',
-    },
-    {
-      title: 'Autumn Forest',
-      description: 'A vibrant forest with colorful leaves in the fall season.',
-      imageUrl: 'https://source.unsplash.com/300x200/?autumn',
-    },
-    {
-      title: 'Rainy Day',
-      description: 'A peaceful view of the world on a rainy day with droplets on the window.',
-      imageUrl: 'https://source.unsplash.com/300x200/?rain',
-    },
-    {
-      title: 'Snowy Mountains',
-      description: 'A serene winter landscape with snow-covered peaks.',
-      imageUrl: 'https://source.unsplash.com/300x200/?snow',
-    },
-    {
-      title: 'Tropical Paradise',
-      description: 'A secluded beach with crystal-clear water and palm trees swaying.',
-      imageUrl: 'https://source.unsplash.com/300x200/?tropical',
-    },
-    {
-      title: 'Night Sky',
-      description: 'Stargazing under the clear night sky with a view of the Milky Way.',
-      imageUrl: 'https://source.unsplash.com/300x200/?night-sky',
-    },
-    {
-      title: 'Lavender Fields',
-      description: 'Walking through vast lavender fields during sunset.',
-      imageUrl: 'https://source.unsplash.com/300x200/?lavender',
-    },
-    {
-      title: 'Rolling Hills',
-      description: 'Driving through rolling hills with lush green fields and blue skies.',
-      imageUrl: 'https://source.unsplash.com/300x200/?hills',
-    },
+    // Add more sections here if needed
   ];
-
-  // Define the headers you want to insert after every group of cards
-  const headers = [
-    "This is the Web Development Course",
-    "This is the Software Development Course",
-    "This is the Mobile Development Course",
-    "This is the Data Science Course"
-  ];
-
-  
-  // Function to chunk the cardData array into groups of 4 cards
-  const chunkCards = (arr, size) => {
-    const chunks = [];
-    for (let i = 0; i < arr.length; i += size) {
-      chunks.push(arr.slice(i, i + size));
-    }
-    return chunks;
-  };
-
-  const cardChunks = chunkCards(cardData, 3);
 
   return (
     <div>
-      <h1>Welcome to the Home Page</h1>
+      <h1 className="text-4xl text-center my-8 font-bold">Welcome to the Development Hub</h1>
       <div className="container mx-auto py-8">
-        {/* Loop through each chunk of cards */}
-        {cardChunks.map((chunk, index) => (
-          <div key={index} className="my-8">
-            {/* Insert the header with unique classes for animation */}
-            <h2 className={`header-text header-text${index + 1}`}>
-              {headers[index]}
+        {sections.map((section) => (
+          <div key={section.title} className="mb-12">
+            <h2 className={`text-3xl font-semibold mb-6 ${section.headerColor}`}>
+              {section.title}
             </h2>
-
-            {/* Cards will be here */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-              {chunk.map((data, i) => (
-                <Card
-                  key={i}
-                  title={data.title}
-                  description={data.description}
-                  imageUrl={data.imageUrl}
-                />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {/* Render cards for each section */}
+              {section.cards.map((data) => (
+                <Card key={data.title} {...data} />
               ))}
             </div>
           </div>

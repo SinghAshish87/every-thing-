@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #eae7e2;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.resume {
+  width: 210mm; /* A4 width */
+  background: #f7f5f2;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* TOP SECTION */
+.top {
+  display: flex;
+  justify-content: center; /* Center the top section horizontally */
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.top-info {
+  text-align: center; /* Center text inside this div */
+}
+
+.top-info h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #4b3621;
+}
+
+.top-info h3 {
+  margin-top: 8px;
+  font-size: 20px;
+  color: #7b5a42;
+  letter-spacing: 2px;
+}
+
+.line {
+  width: 120px;
+  height: 3px;
+  background: #7b5a42;
+  margin: 10px auto; /* Center the line */
+}
+
+/* MAIN CONTENT */
+.content {
+  display: flex;
+  gap: 60px;
+  position: relative;
+}
+
+/* Vertical Line in Middle */
+.content::before {
+  content: "";
+  position: absolute;
+  left: 40%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: #c2b8ae;
+  z-index: 1;
+}
+
+/* Left Column */
+.left-col {
+  width: 40%;
+}
+
+.left-col section {
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1.5px solid #d4ccc3;
+}
+
+/* Right Column */
+.right-col {
+  width: 60%;
+}
+
+.right-col section {
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1.5px solid #d4ccc3;
+}
+
+/* Headings */
+h2 {
+  color: #4b3621;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+p,
+li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+section {
+  margin-bottom: 25px;
+}
+
+ul {
+  margin-left: 16px;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+/* PRINT MODE */
+@media print {
+  body {
+    background: none;
+    padding: 0;
+  }
+  .resume {
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+  }
+}

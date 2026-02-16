@@ -1,0 +1,38 @@
+/* Add this to styles/glowing.css or within a <style> tag in the component file */
+@keyframes rainbowGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6), 0 0 20px rgba(255, 0, 0, 0.6);
+  }
+  14% {
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.6), 0 0 20px rgba(255, 165, 0, 0.6);
+  }
+  28% {
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.6), 0 0 20px rgba(255, 255, 0, 0.6);
+  }
+  42% {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6), 0 0 20px rgba(0, 255, 0, 0.6);
+  }
+  57% {
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.6), 0 0 20px rgba(0, 0, 255, 0.6);
+  }
+  71% {
+    box-shadow: 0 0 10px rgba(75, 0, 130, 0.6), 0 0 20px rgba(75, 0, 130, 0.6);
+  }
+  85% {
+    box-shadow: 0 0 10px rgba(238, 130, 238, 0.6), 0 0 20px rgba(238, 130, 238, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6), 0 0 20px rgba(255, 0, 0, 0.6);
+  }
+}
+
+/* Rainbow glowing border with animation */
+.rainbow-glowing-border {
+  position: relative;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), radial-gradient(circle, rgba(0, 255, 255, 0.7) 0%, rgba(0, 255, 255, 0) 70%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: rainbowGlow 3s infinite ease-in-out;
+  padding: 20px;
+}
