@@ -20,7 +20,7 @@ const Page = () => {
         },
         {
           title: 'Vue.js',
-          imageUrl: '/images/vue.png', // Example image URL for Vue
+          imageUrl: '/images/express.png',
           link: '/course/vue', // Link to the Vue course page
           header: 'Explore Vue.js',
           buttonType1: 1, // Soft Teal
@@ -111,15 +111,24 @@ const Page = () => {
     <div>
       <h1 className="text-4xl text-center my-8 font-bold">Welcome to the Development Hub</h1>
       <div className="container mx-auto py-8">
-        {sections.map((section) => (
-          <div key={section.title} className="mb-12">
+        {sections.map((section, index) => (
+          <div key={index} className="mb-12">
             <h2 className={`text-3xl font-semibold mb-6 ${section.headerColor}`}>
               {section.title}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {/* Render cards for each section */}
-              {section.cards.map((data) => (
-                <Card key={data.title} {...data} />
+              {section.cards.map((data, i) => (
+                <Card
+                  key={i}
+                  title={data.title}
+                  imageUrl={data.imageUrl}
+                  link={data.link}
+                  header={data.header}
+                  buttonType1={data.buttonType1}
+                  buttonType2={data.buttonType2}
+                  iconType={data.iconType} // Pass iconType to Card component
+                />
               ))}
             </div>
           </div>

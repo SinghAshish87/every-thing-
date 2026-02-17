@@ -3,9 +3,17 @@ import Link from "next/link"; // Importing Link from Next.js
 import { FaReact, FaNodeJs } from "react-icons/fa"; // Importing Font Awesome icons
 import { MdDataUsage } from "react-icons/md"; // Importing Material Design icons
 import { HiOutlineLightBulb } from "react-icons/hi"; // Importing Heroicons
-import Image from 'next/image'; // Import Image from next/image for optimization
 
-const Card = ({ title, imageUrl, link, header, buttonType1, buttonType2, iconType }) => {
+const Card = ({
+  title,
+  imageUrl,
+  link,
+  header,
+  buttonType1,
+  buttonType2,
+  
+  iconType,
+}) => {
   // Function to determine button styles based on buttonType
   const getButtonStyles = (type) => {
     switch (type) {
@@ -52,11 +60,9 @@ const Card = ({ title, imageUrl, link, header, buttonType1, buttonType2, iconTyp
 
         {/* Image Section */}
         <div className="w-full sm:w-1/2">
-          <Image
+          <img
             src={imageUrl}
             alt={title}
-            width={500} // Specify the width and height
-            height={500}
             className="w-full h-full object-cover rounded-2xl transform transition-all duration-300 hover:scale-105"
           />
         </div>
